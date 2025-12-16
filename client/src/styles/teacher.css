@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&display=swap");
+
+.teacher-container {
+  min-height: 100vh;
+  padding: 40px;
+  font-family: "Sora", sans-serif;
+  background: #ffffff;
+  position: relative;
+}
+
+/* Logo */
+.poll-badge {
+  height: 32px;
+  margin-bottom: 30px;
+}
+
+/* View History Button */
+.view-history-btn {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  background: #7c6ce8;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.view-history-btn:hover {
+  opacity: 0.9;
+}
+
+/* Floating Chat Button */
+.chat-fab {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: #7c6ce8;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Optional: smooth panel stacking */
+.teacher-container > * {
+  transition: all 0.2s ease;
+}

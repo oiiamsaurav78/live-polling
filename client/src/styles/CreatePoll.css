@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&display=swap");
+
+:root {
+  --primary: #6f6ce8;
+  --text-dark: #111827;
+  --text-muted: #6b7280;
+  --border-light: #e5e7eb;
+  --bg-light: #f5f5f5;
+}
+
+/* Layout */
+.create-poll-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  font-family: "Sora", sans-serif;
+}
+
+.create-poll-container {
+  width: 100%;
+  max-width: 760px;
+}
+
+/* Heading */
+.create-title {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.create-subtitle {
+  font-size: 16px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Card */
+.create-poll-card {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+/* Question */
+.field-label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.question-input {
+  width: 100%;
+  min-height: 120px;
+  background: var(--bg-light);
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  resize: none;
+}
+
+.char-count {
+  text-align: right;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Options */
+.options-section {
+  margin-top: 24px;
+}
+
+.options-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.option-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.option-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.option-index {
+  width: 22px;
+  height: 22px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.option-input {
+  flex: 1;
+  background: var(--bg-light);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.option-right {
+  display: flex;
+  gap: 14px;
+  font-size: 14px;
+}
+
+.option-right input {
+  accent-color: var(--primary);
+}
+
+/* Add option */
+.add-option-btn {
+  margin-top: 14px;
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+/* ===============================
+   Question header (label + timer)
+================================ */
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+/* ===============================
+   Timer dropdown (Figma style)
+================================ */
+.timer-select {
+  font-family: "Sora", sans-serif;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  background: #ffffff;
+  cursor: pointer;
+}
+
+
+/* Footer */
+.duration-row {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* CTA */
+.ask-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 32px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.ask-btn:hover {
+  box-shadow: 0 8px 20px rgba(111, 108, 232, 0.35);
+}
+
+/* Active poll text */
+.poll-active-text {
+  font-size: 14px;
+  color: var(--text-muted);
+}

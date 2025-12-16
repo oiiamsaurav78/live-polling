@@ -1,0 +1,99 @@
+import { useState } from "react";
+import { usePoll } from "../../context/PollContext";
+import Timer from "../common/Timer";
+import "../../styles/StudentPoll.css";
+
+const StudentPoll = () => {
+  const { pollState, studentId, socket } = usePoll();
+  const [selected, setSelected] = useState(null);
+  const [submitted, setSubmitted] = useState(false);
+
+  if (!pollState || !pollState.isActive) return null;
+
+  const results = pollState.results || {};
+  const totalVotes = Object.values(results).reduce(
+    (a, b) => a + b,
+    0
+  );
+
+  const submitAnswer = () => {
+    if (selected === null || submitted) return;
+
+    socket.emit("submit_answer", {
+      studentId,
+      optionIndex: selected
+    });
+
+    setSubmitted(true);
+  };
+
+  return (
+    <div className="student-poll-wrapper">
+      <div className="poll-card">
+        {/* Header */}
+        <div className="poll-header">
+          <span>Question 1</span>
+          <Timer
+            startTime={pollState.startTime}
+            duration={pollState.duration}
+          />
+        </div>
+
+        {/* Question */}
+        <div className="poll-question-box">
+          {pollState.question}
+        </div>
+
+        {/* OPTIONS + LIVE BARS */}
+        <div className="poll-options">
+          {pollState.options.map((opt, index) => {
+            const count = results[index] || 0;
+            const percent = totalVotes
+              ? Math.round((count / totalVotes) * 100)
+              : 0;
+
+            return (
+              <div
+                key={index}
+                className={`poll-option ${
+                  selected === index ? "selected" : ""
+                }`}
+                onClick={() => !submitted && setSelected(index)}
+              >
+                <div className="option-top">
+                  <span>{opt.text}</span>
+                  <span className="vote-count">
+                    {percent}%
+                  </span>
+                </div>
+
+                <div className="option-bar">
+                  <div
+                    className="option-fill"
+                    style={{ width: `${percent}%` }}
+                  ></div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {!submitted ? (
+          <button
+            className="submit-btn"
+            onClick={submitAnswer}
+            disabled={selected === null}
+          >
+            Submit
+          </button>
+        ) : (
+          <p className="submitted-text">
+            Answer submitted. Waiting for others…
+          </p>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default StudentPoll;

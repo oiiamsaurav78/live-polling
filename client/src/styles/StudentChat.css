@@ -1,0 +1,117 @@
+.student-chat-container {
+  position: fixed;
+  bottom: 90px;
+  right: 24px;
+
+  width: 320px;
+  height: 420px;
+
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(111, 108, 232, 0.18);
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: "Sora", sans-serif;
+  z-index: 999;
+}
+
+/* Header */
+.student-chat-header {
+  padding: 14px 16px;
+  background: linear-gradient(135deg, #6f6ce8, #5b57d6);
+  color: #ffffff;
+}
+
+.student-chat-header h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Messages area */
+.student-chat-messages {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  background: #f7f8ff;
+}
+
+/* Message bubble */
+.student-chat-message {
+  max-width: 80%;
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.student-chat-message .sender {
+  font-size: 11px;
+  font-weight: 600;
+  color: #6f6ce8;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.student-chat-message p {
+  margin: 0;
+  font-size: 13px;
+  color: #1f2937;
+}
+
+/* Own message (right aligned) */
+.student-chat-message.own {
+  margin-left: auto;
+  background: linear-gradient(135deg, #6f6ce8, #5b57d6);
+  color: #ffffff;
+}
+
+.student-chat-message.own .sender {
+  color: #e0e7ff;
+}
+
+.student-chat-message.own p {
+  color: #ffffff;
+}
+
+/* Input */
+.student-chat-input {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.student-chat-input input {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  outline: none;
+  font-size: 13px;
+  font-family: "Sora", sans-serif;
+}
+
+.student-chat-input input:focus {
+  border-color: #6f6ce8;
+}
+
+.student-chat-input button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 10px;
+  background: #6f6ce8;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.student-chat-input button:hover {
+  background: #5b57d6;
+}

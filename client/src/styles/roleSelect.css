@@ -1,0 +1,160 @@
+/* ===============================
+   Google Font (Sora)
+================================ */
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap");
+
+/* ===============================
+   Color Variables (Figma-aligned)
+================================ */
+:root {
+  --primary: #6f6ce8;
+  --primary-light: #f3f2ff;
+  --text-dark: #111827;
+  --text-muted: #6b7280;
+  --border-light: #e5e7eb;
+  --white: #ffffff;
+}
+
+/* ===============================
+   Page Container
+================================ */
+.role-container {
+  min-height: 100vh;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--white);
+  font-family: "Sora", sans-serif;
+  text-align: center;
+}
+
+/* ===============================
+   Heading
+================================ */
+.role-container h1 {
+  font-size: 40px;
+  font-weight: 400;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+#live-polling {
+  font-weight: 600;   /* SemiBold */
+  font-size: 40px;    /* same as heading */
+}
+.poll-badge {
+  height: 36px;          /* matches Figma pill size */
+  margin-bottom: 20px;
+}
+
+/* ===============================
+   Subtitle
+================================ */
+.role-container > p {
+  font-size: 16px;
+  color: var(--text-muted);
+  max-width: 700px;
+  line-height: 1.6;
+  margin-bottom: 50px;
+}
+
+/* ===============================
+   Role Cards Wrapper
+================================ */
+.role-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+/* ===============================
+   Role Card (Base)
+================================ */
+.role-card {
+  width: 280px;
+  padding: 28px;
+  border-radius: 14px;
+  border: 2px solid var(--border-light);
+  background: var(--white);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-align: left;
+}
+
+/* ===============================
+   Hover Effect
+================================ */
+.role-card:hover {
+  border-color: var(--primary);
+}
+
+/* ===============================
+   Active / Selected Card
+================================ */
+.role-card.active {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+/* ===============================
+   Card Title
+================================ */
+.role-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+/* ===============================
+   Card Description
+================================ */
+.role-card p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ===============================
+   Continue Button
+================================ */
+.continue-btn {
+  padding: 14px 50px;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Sora", sans-serif;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* ===============================
+   Button Hover
+================================ */
+.continue-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(111, 108, 232, 0.35);
+}
+
+/* ===============================
+   Mobile Responsive
+================================ */
+@media (max-width: 768px) {
+  .role-container h1 {
+    font-size: 32px;
+  }
+
+  .role-cards {
+    gap: 20px;
+  }
+
+  .role-card {
+    width: 100%;
+    max-width: 320px;
+  }
+}

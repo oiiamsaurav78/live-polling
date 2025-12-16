@@ -1,0 +1,95 @@
+.student-result-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  font-family: "Sora", sans-serif;
+}
+
+.student-result-container {
+  width: 100%;
+  max-width: 520px;
+  background: #ffffff;
+  padding: 26px;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(111, 108, 232, 0.12);
+}
+
+/* Title */
+.result-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 26px;
+  text-align: center;
+  color: #1f2937;
+}
+
+/* Each option */
+.result-row {
+  margin-bottom: 20px;
+}
+
+/* Option text row */
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.result-option-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* Bar background */
+.result-bar {
+  height: 10px;
+  background: #e6e7fb;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+/* Bar fill */
+.result-fill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #6f6ce8,
+    #5b57d6
+  );
+  transition: width 0.45s ease;
+}
+
+/* Subtle emphasis (no red/green) */
+.result-row.correct .result-fill {
+  background: linear-gradient(
+    90deg,
+    #7c7af0,
+    #6f6ce8
+  );
+}
+
+.result-row.wrong .result-fill {
+  background: linear-gradient(
+    90deg,
+    #6f6ce8,
+    #5b57d6
+  );
+}
+
+/* Votes text */
+.result-count {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+/* Optional: poll ended badge */
+.poll-ended-text {
+  text-align: center;
+  font-size: 13px;
+  color: #6f6ce8;
+  margin-bottom: 18px;
+  font-weight: 500;
+}
